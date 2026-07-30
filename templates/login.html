@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Login - Nagrik AI{% endblock %}
+{% block content %}
+<div class="auth-card">
+  <h1>Login</h1>
+  <form method="POST">
+    <label>Email</label>
+    <input type="email" name="email" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <button type="submit" class="btn">Login</button>
+  </form>
+  <p class="muted">No account? <a href="{{ url_for('register') }}">Register here</a></p>
+  <p class="muted small">Admin demo login: admin@nagrik.ai / admin123</p>
+</div>
+{% endblock %}

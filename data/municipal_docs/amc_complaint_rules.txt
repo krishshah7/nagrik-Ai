@@ -1,0 +1,11 @@
+AMC Complaint Handling Rules (Sample Document)
+
+Every civic complaint registered on Nagrik AI must be acknowledged by the concerned department within 24 hours of submission.
+
+Road damage and pothole complaints are handled by the Roads and Buildings department. High severity road complaints, such as major potholes on arterial roads, must be inspected within 24 hours and repaired within 7 working days.
+
+Garbage and waste collection complaints are handled by the Solid Waste Management department. Such complaints must be resolved within 48 hours of being reported.
+
+Streetlight complaints are handled by the Electrical department and should be resolved within 3 working days of the complaint being filed.
+
+Citizens can appeal an unresolved complaint by escalating it to the Ward Officer if it remains open for more than 15 days.

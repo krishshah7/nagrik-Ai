@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}AI Assistant - Nagrik AI{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>AI Assistant</h1>
+  <p class="muted">
+    Ask anything: describe a new problem, ask about municipal rules and schemes ("Who is responsible for drainage complaints?"),
+    or ask about complaint data ("Which ward has the most complaints?"). A Router Agent will send your question
+    to the right specialist agent.
+  </p>
+
+  <div id="chat-window" class="chat-window"></div>
+
+  <form id="chat-form" class="chat-form">
+    <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" required>
+    <button type="submit" class="btn">Send</button>
+  </form>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

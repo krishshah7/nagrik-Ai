@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Submit Complaint - Nagrik AI{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Submit a Complaint</h1>
+  <p class="muted">Describe the civic issue. Our AI Complaint Agent will automatically categorize it, judge its severity, and suggest the next action.</p>
+
+  <form method="POST" id="complaint-form">
+    <label>Ward</label>
+    <select name="ward" required>
+      {% for w in wards %}<option value="{{ w }}">{{ w }}</option>{% endfor %}
+    </select>
+
+    <label>Complaint Description</label>
+    <textarea name="description" id="description" rows="5" required placeholder="e.g. There's a huge pothole near the bridge on MG Road."></textarea>
+
+    <button type="button" class="btn secondary" id="rewrite-btn">✨ Rewrite with AI</button>
+    <button type="submit" class="btn">Submit Complaint</button>
+  </form>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

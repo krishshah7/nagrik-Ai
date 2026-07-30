@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel - Nagrik AI{% endblock %}
+{% block content %}
+<h1>Admin Panel</h1>
+<p class="muted">Review AI-generated triage and update the status of each complaint.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th><th>Description</th><th>Ward</th><th>Category</th><th>Severity</th>
+      <th>Suggested Action</th><th>Status</th><th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in complaints %}
+    <tr>
+      <td>#{{ c.id }}</td>
+      <td>{{ c.description[:70] }}{% if c.description|length > 70 %}...{% endif %}</td>
+      <td>{{ c.ward }}</td>
+      <td>{{ c.category }}</td>
+      <td><span class="badge severity-{{ c.severity|lower }}">{{ c.severity }}</span></td>
+      <td>{{ c.suggested_action }}</td>
+      <td><span class="badge status-{{ c.status|lower|replace(' ', '-') }}">{{ c.status }}</span></td>
+      <td>
+        <form method="POST" action="{{ url_for('update_status', complaint_id=c.id) }}" class="inline-form">
+          <select name="status">
+            {% for s in statuses %}
+              <option value="{{ s }}" {% if s == c.status %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="btn small">Update</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
